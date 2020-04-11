@@ -1,17 +1,20 @@
-.container {
-	max-width: 100vw;
-	height: 100vh;
-	max-height: 100vh;
+.NotFound {
+	width: 100%;
+	height: auto;
 	background: url("../../images/stars.svg"), #1b1b25;
 	background-repeat: repeat;
 	text-align: center;
 	vertical-align: center;
-	position: relative;
+	position: absolute;
 	display: flex;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
 	flex-direction: column;
 	justify-content: center;
+	padding-top: 50px;
 }
-.container h1 {
+.NotFound h1 {
 	padding: 0px;
 	margin: 0px;
 	color: rgba(255, 255, 255, 0.5);

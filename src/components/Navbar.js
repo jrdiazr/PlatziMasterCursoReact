@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/badge-header.svg";
+import logo from "../images/logo.svg";
 import "../components/styles/Navbar.css";
 
 class BadgeNew extends React.Component {

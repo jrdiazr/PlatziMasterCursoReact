@@ -10,24 +10,16 @@ class BadgeForm extends React.Component {
 		});
 	};
 	handleClick = (event) => {
-		event.preventDefault();
+		//event.preventDefault();
 	};
-	handleSubmit = (event) => {
-		event.preventDefault();
-	};
+
 	render() {
-		const {
-			firstName,
-			lastName,
-			email,
-			jobTitle,
-			twitterName,
-		} = this.props.form;
+		const { firstName, lastName, email, jobTitle, twitter } = this.props.form;
 		const handleChange = this.props.onChange;
 		return (
 			<div>
-				<h1>New Attendant</h1>
-				<form onSubmit={this.handleSubmit}>
+				<h1>{`${this.props.accion} Attendant`}</h1>
+				<form onSubmit={this.props.onSubmit}>
 					<div className="form-group">
 						<label>First Name</label>
 						<input
@@ -74,13 +66,16 @@ class BadgeForm extends React.Component {
 							onChange={handleChange}
 							className="form-control"
 							type="text"
-							name="twitterName"
-							value={twitterName}
+							name="twitter"
+							value={twitter}
 						/>
 					</div>
 					<button className="btn btn-primary" onClick={this.handleClick}>
 						Save
 					</button>
+					{this.props.error && (
+						<p className="text-danger">{this.props.error.message}</p>
+					)}
 				</form>
 			</div>
 		);
